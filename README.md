@@ -1,11 +1,90 @@
-# dav-university-1
+# Project Report: Building a Custom Chatbot using Intel Extension for Transformers
+
+This project aims to build a custom chatbot using Hugging Face models and Intel Extension for Transformers. The following steps will guide you through setting up the environment, installing necessary dependencies, and running the project.
+
+## Table of Contents
+1. [Environment Setup](#environment-setup)
+2. [Installation](#installation)
+3. [Running the Project](#running-the-project)
+4. [Conclusion](#conclusion)
+
+## Environment Setup
+
+First, we need to create and activate a new Conda environment.
+
+```bash
+# Create a new Conda environment with Python 3.10
+conda create -n itrex python=3.10
+
+# Activate the environment
+conda activate itrex
+```
+
+
+## Installation
+
+
+Next, we will install the Intel Extension for Transformers and its dependencies.
+
+```bash
+Copy code
+# Install Intel Extension for Transformers
+pip install intel-extension-for-transformers
+
+# Clone the Intel Extension for Transformers repository
+git clone https://github.com/intel/intel-extension-for-transformers.git
+
+# Navigate to the neural chat directory
+cd intel-extension-for-transformers/intel_extension_for_transformers/neural_chat/
+
+# Install CPU-specific requirements
+pip install -r requirements_cpu.txt
+
+# Install additional requirements
+pip install -r requirements.txt
+```
+
+
+
+## Running the Project
+
+To interact with Hugging Face models, log in to the Hugging Face CLI and set up Jupyter and IPython kernel.
+
+```bash
+Copy code
+# Log in to Hugging Face
+huggingface-cli login
+
+# Install Jupyter and IPython kernel
+python3 -m pip install jupyter ipykernel
+
+# Add kernel for its environment
+python3 -m ipykernel install --name neural-chat --user
+
+# Log in to Hugging Face again if required
+
+huggingface-cli login
+```
+
+
+## Conclusion
+
+This project demonstrates how to set up a custom chatbot using Hugging Face models and Intel Extension for Transformers. The steps outlined provide a clear guide for setting up the environment, installing necessary dependencies, and running the project.
+
+
+## Team Name: dav-university-1
+
 
 # git clone https://github.com/intel/intel-extension-for-transformers.git
+```bash
 
 Cloning into 'intel-extension-for-transformers.gited.... 
 Username for 'https://github.com": "C
 
+```
+
 # conda create -n itrex python-3.10 - I
+```bash
 
 Retrieving package metadata: ...working... done
 Channels:
@@ -47,17 +126,22 @@ Preparing transaction: ...working... done
 Verifying transaction: ...working... done
 Executing transaction: ...working... done
 
+
 #To activate this environment, use
  $ conda activate itrex-1
  #
 #To deactivate an active environment, use
 $conda deactivate
+```
 
 # conda activate itrex
+```bash
 
 uc820865aa685ee277c4ba3d82c0528d@idc-training-gpu-compute-24:~$ conda activate 1trex-1
-(1trex-1) 
+(1trex-1)
+```
 # pip install intel-extension-for-transformers
+```bash
 
 Using cached intel_extension_for_transformers-1.4.2-cp310-cp316-manylinux_2_28_x66_64.hl.metadata (26 kB) Collecting packaging (from intel-extension-for-transformers)
 Using cached packaging-24.1-py3-none-any hl.metadata (3.2 kB)
@@ -200,12 +284,16 @@ Using cached fonttools-4.53.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x8
 Using cached six-1.16.0-py2.py3-none-any.wh1 (11 kB)
 Installing collected packages: wcwidth, schema, pytz, py-cpuinfo, wrapt, urllib3, tzdata, typing-extensions, tqdm, threadpoolctl, six, safetensors, regex, pyyaml, pyparsing, psutil, pret tytable, Pillow, packaging, numpy, kiwisolver, joblib, idna, fsspec, fonttools, filelock, cycler, charset-normalizer, certifi, scipy, requests, python-dateutil, opencv-python-headless, d eprecated, contourpy, scikit-learn, pandas, matplotlib, huggingface-hub, tokenizers, pycocotools, transformers, neural-compressor, intel-extension-for-transformers Successfully installed Pillow-10.3.0 certifi-2024.6.2 charset-normalizer-3.3.2 contourpy-1.2.1 cycler-0.12.1 deprecated-1.2.14 file lock-3.15.3 fonttools-4.53.0 fsspec-2024.6.0 huggingfac e-hub-0.23.4 idna-3.7 intel-extension-for-transformers-1.4.2 joblib-1.4.2 kiwisolver-1.4.5 matplotlib-3.9.0 neural-compressor-2.6 numpy-1.26.4 opencv-python-headless-4.10.0.84 packaging- 24.1 pandas-2.2.2 prettytable-3.10.0 psutil-6.0.0 py-cpuinfo-9.0.0 pycocotools-2.0.8 pyparsing-3.1.2 python-dateutil-2.9.0.poste pytz-2024.1 pyyaml-6.0.1 regex-2024.5.15 requests-2.32.3 safetensors-0.4.3 schema-0.7.7 scikit-learn-1.5.0 scipy-1.13.1 six-1.16.0 threadpoolct1-3.5.0 tokenizers-0.19.1 tqdm-4.66.4 transformers-4.41.2 typing-extensions-4.12.2 tzdata-2824.1 url lib3-2.2.2 wewidth-0.2.13 wrapt-1.16.0
 Successfully installed intel-extension-for-transformers-0.1.0
+```
 
 # cd /intel-extension-for-transformers/intel_extension_for_transformers/neural_chat/
+```bash
 
 (1trex-1) uc820865aa685ee277c4ba3d82c0528d@idc-training-gpu-compute-24:/intel-extension-for-transformers/intel_extension_for_transformers/neural_chat$
+```
 
 # pip install -r requirements_cpu.txt
+```bash
 
 
 Looking in Indexes: https://pypi.org/simple, https://pytorch-extension, Intel.com/release-whl/stable/cpu/us/ Collecting accelerate=0.28.0 (from -r requirements_cpu.txt (line 2))
@@ -304,11 +392,11 @@ Attempting uninstall: fsspec
 Found existing installation: fsspec 2024.6.0 Uninstalling fsspec-2024.6.0:
 Successfully uninstalled fsspec-2024.6.0
 Successfully installed DataProperty-1.0.1 MarkupSafe-2.1.5 absl-py-2.1.0 accelerate-0.28.0 aiohttp-3.9.5 aiosignal-1.3.1 anyio-4.4.0 async-timeout-4.0.3 attrs-23.2.0 cchardet-2.1.7 chard et-5.2.0 click-8.1.7 colorama-0.4.6 coloredlogs-15.0.1 datasets-2.20.0 dill-0.3.8 dnspython-2.6.1 einops-0.8.0 email_validator-2.2.0 evaluate-0.4.2 exceptiongroup-1.2.1 fastapi-0.111.0 f astapi-cli-0.0.4 frozenlist-1.4.1 fschat-0.2.32 fsspec-2024.5.0 h11-0.14.0 httpcore-1.0.5 httptools-0.6.1 httpx-0.27.0 humanfriendly-10.0 intel_extension_for_pytorch-2.3.0+cpu jinja2-3.1 .4 jsonlines-4.0.0 1m-eval-0.4.2 1xml-5.2.2 markdown-it-py-3.0.0 markdown2-2.4.13 mbstrdecoder-1.1.3 mdur1-0.1.2 more-itertools-10.3.0 mpmath-1.3.0 multidict-6.0.5 multiprocess-0.70.16 n etworkx-3.3 neural_speed-1.0ae nh3-0.2.17 nltk-3.8.1 numexpr-2.10.1 numpy-1.23.5 nvidia-cublas-cu12-12.1.3.1 nvidia-cuda-cupti-cu12-12.1.105 nvidia-cuda-nvrtc-cu12-12.1.105 nvidia-cuda-r untime-cu12-12.1.105 nvidia-cudnn-cu12-8.9.2.26 nvidia-cufft-cu12-11.0.2.54 nvidia-curand-cu12-10.3.2.106 nvidia-cusolver-cu12-11.4.5.107 nvidia-cusparse-cu12-12.1.0.106 nvidia-nccl-cu12 -2.20.5 nvidia-nvjitlink-cu12-12.5.40 nvidia-nvtx-cu12-12.1.105 oneccl_bind_pt-2.3.0+cpu onnx-1.16.1 optimum-1.20.0 optimum-intel-1.17.2 orjson-3.10.5 pathvalidate-3.2.0 peft-0.6.2 porta locker-2.8.2 prompt-toolkit-3.0.47 protobuf-5.27.1 pyarrow-16.1.0 pyarrow-hotfix-0.6 pybind11-2.12.0 pydantic-1.10.13 pygments-2.18.0 pytablewriter-1.2.0 python-dotenv-1.0.1 python-multi part-0.0.9 rich-13.7.1 rouge_score-0.1.2 sacrebleu-2.4.2 sacremoses-0.1.1 sentencepiece-0.2.0 shellingham-1.5.4 shortuuid-1.0.13 sniffio-1.3.1 sqlitedict-2.1.0 starlette-0.37.2 svgwrite- 1.4.3 sympy-1.12.1 tabledata-1.3.3 tabulate-0.9.0 tcolorpy-0.1.6 tiktoken-0.4.0 torch-2.3.0 torchaudio-2.3.0 tqdm-multiprocess-0.0.11 transformers_stream_generator-0.0.5 triton-2.3.0 typ epy-1.3.2 typer-0.12.3 ujson-5.10.0 uvicorn-0.30.1 uvloop-0.19.0 watchfiles-0.22.0 wavedrom-2.0.3.post3 websockets-12.0 word2number-1.1 xxhash-3.4.1 yacs-0.1.8 yarl-1.9.4 zstandard-0.22.0
+```
 
 
  # pip install -r requirements.txt
-
-
+ ```bash
 
 Requirement already satisfied: accelerate in /home/u9281ce8c87c085602fa7241ebe2558/.conda/envs/itrex-1/lib/python3.10/site-packages (from -r requirements.txt (line 111 (0.28.0) Requirement already satisfied: cchardet in /home/u9281ce8c8e7c085602fa3241ebe2550/.conda/envs/itrex-1/11b/python3.10/site-packages (from requirements.txt (line 2)) (2.1.7) Requirement already satisfied: einops in /home/u9291ce8c8e7c085602fa721ebe2550/.conda/envs/trex-1/lib/python3.18/site-packages (from -r requirements.txt (line 3)) (8.8.8) Requirement already satisfied: evaluate in /home/u201ce8c87c885682fa7241ebe2550/.conda/envs/itrex-1/lib/python3.10/site-packages (requirements.txt (line 4)) (8.4.27 Requirecent already satisfied: fastopi in /home/u201ce8e8e7c885682fa7241ebe2558/.conda/envs/itrex-1/lib/python3.18/site-packages (from requirements.txt (line 5)) (0.111.0) Collecting fschat-0.2.35 (from requirements.txt (line 8))
 using cached fochet-0.2.35-py3-none-any.wh1.metadata (19 kB
@@ -406,17 +494,19 @@ Found existing installation: fschat 0.2.32
 Uninstalling fschat-0.2.32:
 Successfully uninstalled fschat-0.2.32
 Successfully installed aioprometheus-23.12.0 astumparse-1.6.3 flatbuffers-24.3.25 fschat-0.2.35 gast-0.5.4 google-pasta-0.2.0 grpcio-1.64.1 h5py-3.11.0 jsonschema-4.22.0 jsonschema-speci fications-2023.12.1 keras-3.3.3 11bclang-18.1.1 markdown-3.6 ml-dtypes-0.3.2 msgpack-1.0.8 namex-0.0.8 ninja-1.11.1.1 opt-einsum-3.3.0 optree-0.11.0 protobuf-4.25.3 quantile-python-1.1 r ay-2.30.0 referencing-0.35.1 rpds-py-0.18.1 tensorboard-2.16.2 tensorboard-data-server-0.7.2 tensorflow-2.16.1 tensorflow-io-gcs-filesystem-0.37.0 termcolor-2.4.0 vilm-0.2.5 werkzeug-3.0 .3 xformers-0.0.26.post1
+```
 
 # huggingface-cli login
+```bash
 
 HUGGING FACE
 A token is already saved on your machine. Run huggingface-cli whoami to get more information or huggingface-cli logout if you want to log out. Setting a new token will erase the existing one.
 To login, huggingface_hub requires a token generated from https://huggingface.co/settings/tokens.
 Enter your token (input will not be visible): “XXXX XXXX”
+```
 
 # python3 -m pip install jupyter ipykernel
-
-
+```bash
 
 Collecting tomli>-1.2.2 (from jupyterlab 4.3, 4.2.0-notebook->jupyter)
 Using cached tom14-2.0.1-py3-none-any.wh1.metadata (8.9 kB)
@@ -434,8 +524,6 @@ Using cached python_json_logger-2.0.7-py3-none-any.wh1.metadata (6.5 KB)
 Requirement already satisfied: pyyaml-5.3 in /home/u9201ce8c8e7c885602fa7241ebe2550/.conda/envs/itrex-1/lib/python3.18/site-packages (from jupyter-events-0.9.0->jupyter-server<3,>=2.4. ->notebook->jupyter) (6.0.1) Collecting rfc3339-validator (from jupyter-events-0.8.0->jupyter serven 3, -2.4.0-notebook->Jupyter)
 Using cached rfc3339_validator-8.1.4-py2.py3-none-any.wh1.metadata (1.5 kB)
 Collecting rf3986-validator>-8.1.1 (from jupyter-events-0.9.8->jupyter-server<3,>=2.4.8-notebook->jupyter) Using cached efc3996_validator-0.1.1-py2.py3-none-any.wh.metadata (1.7 kB)
-
-
 Using cached jupyterlab-4.2.2-py3-none-any.whl (11.6 MB) Using cached jupyterlab_server-2.27.2-py3-none-any.whl (59 kB) Using cached jupyterlab_widgets-3.0.11-py3-none-any.whl (214 kB) Using cached mistune-3.0.2-py3-none-any.whl (47 kB)
 Using cached nbclient-0.10.0-py3-none-any.wh1 (25 kB)
 Using cached nbformat-5.10.4-py3-none-any.whl (78 kB)
@@ -454,8 +542,6 @@ Using cached pure_eval-0.2.2-py3-none-any.whl (11 kB)
 Using cached python_json_logger-2.8.7-py3-none-any.whl (8.1 kB)
 Using cached rfc3986_validator-0.1.1-py2.py3-none-any.wh1 (4.2 kB)
 Using cached argon2_cffi_bindings-21.2.0-cp36-ab13-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (86 kB) Using cached rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)
-
-
 A token is already saved on your machine. Run huggingface-cli whoami to get more information or huggingface-cli logout if you want to log out. Setting a new token will erase the existing one. To login, hugging face hub requires a token generated from https://huggingface.co/settings/tokens. Enter your token (input will not be visible): Traceback (most recent call last):
 File "/home/u9201ce8c8e7ce85602fa7241ebe2550/.conda/envs/itrex-1/bin/huggingface-cli", line 8, in <module>
 sys.exit(main())
@@ -501,15 +587,9 @@ Using cached matplotlib_inline-0.1.7-py3-none-any.whl.metadata (3.9 kB)
 Collecting nest-asyncio (From ipykernel)
 Using cached nest_asyncio-1.6.0-py3-none-any.whl.metadata (2.8 KB)
 Requirement already satisfied: packaging in /home/u9281ce8c8e7c085602fa7241be2550/.conda/envs/itrex-1/lib/python3.18/site-packages (from ipykernel) (24.1) Requirement already satisfied: psutil in /home/u9201ce8c8e7c065602fa7241ebe2550/.conda/envs/itrex-1/lib/python3.10/site-packages (from ipykernel) (6.0.0)
-
+```
 # python3 -m ipykernel install --name neural-chat-1 –user
+```bash
 
 Installed kernelspec neural-chat-1 in /Users/your_username/Library/Jupyter/kernels/neural-chat-1
-
-
-
-
-
-
-
-
+```
